@@ -15,3 +15,27 @@ export const constructBasicInfo = (pokemon) => {
         Rank: order,
     };
 };
+
+export const constructStatsInfo = (pokemon) => {
+    const { stats } = pokemon;
+
+    return stats.map((s) => {
+        return {
+            Name: s.stat.name.toUpperCase(),
+            "Base Stat": s.base_stat,
+            Effort: s.effort,
+        };
+    });
+};
+
+export const pokemonAbilities = (pokemon) => {
+    const { abilities } = pokemon;
+
+    return abilities.map((a) => a.ability.name);
+};
+
+export const pokemonMoves = (pokemon) => {
+    const { moves } = pokemon;
+
+    return moves.map((m) => m.move.name);
+};

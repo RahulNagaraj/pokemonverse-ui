@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./Navbar";
 import Home from "../containers/Home";
 import MyFavorites from "../containers/MyFavorites";

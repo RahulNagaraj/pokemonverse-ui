@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -10,7 +10,6 @@ import UserContext from "../store/user-context";
 
 const NavBar = () => {
     const userCtx = useContext(UserContext);
-    const navigate = useNavigate();
     const location = useLocation();
 
     const isFavoritesActive = location.pathname.includes("favorites");
