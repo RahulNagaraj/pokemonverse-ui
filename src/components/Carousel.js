@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 const PokemonCarousel = ({ data }) => {
-    console.log(data);
     return (
         <Carousel variant="dark">
             {data &&
@@ -12,7 +11,7 @@ const PokemonCarousel = ({ data }) => {
                             className="d-block w-100"
                             src={d.img}
                             alt={d.key}
-                            style={{ height: "600px", "object-fit": "contain" }}
+                            style={{ height: "600px", objectFit: "contain" }}
                         />
                         <Carousel.Caption className="">
                             <h3>{d.key}</h3>

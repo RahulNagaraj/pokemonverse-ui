@@ -72,7 +72,7 @@ export const getPokemonDetails = async (pokemonId, abilityId, statId) => {
         const stats = await getPokemonStats(statId);
         const encounters = await getPokemonEncounters(pokemonId);
 
-        return { abilities, stats, encounters };
+        return [{ abilities, stats, encounters }];
     } catch (error) {
         console.log(error.response.data);
     }
