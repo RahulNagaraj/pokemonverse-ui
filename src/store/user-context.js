@@ -1,12 +1,12 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 const UserContext = createContext({
     user: {},
     favorites: [],
-    addUser: (user) => { },
-    removeUser: () => { },
-    upsertFavoritePokemons: (updatedFavoritesList) => { },
-    isFavoritePokemon: (pokemonId) => { },
+    addUser: (user) => {},
+    removeUser: () => {},
+    upsertFavoritePokemons: (updatedFavoritesList) => {},
+    isFavoritePokemon: (pokemonId) => {},
 });
 
 export function UserContextProvider(props) {
@@ -14,7 +14,7 @@ export function UserContextProvider(props) {
     const [favorites, setFavorites] = useState([]);
 
     function addUserHandler(user) {
-        setUser(user)
+        setUser(user);
     }
 
     function removeUserHandler() {
@@ -22,11 +22,14 @@ export function UserContextProvider(props) {
     }
 
     function upsertFavoritePokemonsHandler(updatedFavoritesList) {
-        setFavorites(updatedFavoritesList)
+        setFavorites(updatedFavoritesList);
     }
 
     function isFavoritePokemonHandler(pokemonId) {
-        return favorites.filter(pokemon => pokemon.pokemon_id === pokemonId).length === 1
+        return (
+            favorites.filter((pokemon) => pokemon.pokemon_id === pokemonId)
+                .length === 1
+        );
     }
 
     const context = {
@@ -35,7 +38,7 @@ export function UserContextProvider(props) {
         addUser: addUserHandler,
         removeUser: removeUserHandler,
         upsertFavoritePokemons: upsertFavoritePokemonsHandler,
-        isFavoritePokemon: isFavoritePokemonHandler
+        isFavoritePokemon: isFavoritePokemonHandler,
     };
 
     return (
