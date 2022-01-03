@@ -2,14 +2,11 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Accordion from "react-bootstrap/Accordion";
 import Stack from "react-bootstrap/Stack";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import { ACCORDION_TITLES } from "../common/util";
 
 const PokemonAccordion = (props) => {
     const { basicInfo } = props;
-    console.log(basicInfo);
     return (
         <Container>
             <Accordion defaultActiveKey="0" alwaysOpen>

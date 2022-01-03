@@ -23,6 +23,10 @@ const PokemonDetail = () => {
     return (
         <div>
             <Container>
+                <h1 className="display-2 text-center">
+                    {selectedPokemon.name[0].toUpperCase()}
+                    {selectedPokemon.name.substring(1)}
+                </h1>
                 <PokemonCarousel data={sprites} />
                 <PokemonAccordion
                     basicInfo={constructBasicInfo(selectedPokemon)}
