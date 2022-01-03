@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
 
 const PokemonCard = (props) => {
+    const navigate = useNavigate();
     const {
         pokemon: { id, name, height, weight, sprites, order },
         addToFavorite,
@@ -13,6 +15,14 @@ const PokemonCard = (props) => {
         isFavoritePokemon,
     } = props;
     const pokemon_name = `${name[0].toUpperCase()}${name.substring(1)}`;
+
+    const viewPokemonHandler = () => {
+        navigate("/detail", {
+            state: {
+                pokemon: props.pokemon,
+            },
+        });
+    };
 
     return (
         <Card>
@@ -35,12 +45,20 @@ const PokemonCard = (props) => {
             <Card.Body>
                 <div
                     xs={1}
-                    style={{ display: "flex", justifyContent: "center" }}
+                    style={{ display: "flex", justifyContent: "space-between" }}
                 >
+                    <Button
+                        variant="dark"
+                        size="sm"
+                        onClick={viewPokemonHandler}
+                    >
+                        View
+                    </Button>
                     {isFavoritePokemon && (
                         <Button
                             onClick={() => removeFromFavorite(id)}
                             disabled={disableButton}
+                            size="sm"
                             variant="secondary"
                         >
                             Remove from Favorites
@@ -50,6 +68,7 @@ const PokemonCard = (props) => {
                         <Button
                             onClick={() => addToFavorite(id)}
                             variant="dark"
+                            size="sm"
                             disabled={disableButton}
                         >
                             Add to Favorites

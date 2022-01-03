@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const POKEMON_URL = "https://pokeapi.co/api/v2/pokemon";
+export const POKEMON_BASE_URL = "https://pokeapi.co/api/v2";
+
+export const POKEMON_URL = `${POKEMON_BASE_URL}/pokemon`;
 
 export const LOCAL_BASE_API_URL = "http://localhost:8000/api";
 

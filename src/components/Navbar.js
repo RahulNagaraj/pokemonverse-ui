@@ -25,7 +25,7 @@ const NavBar = () => {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Pokemonverse</Navbar.Brand>
+                    <Navbar.Brand href="/">Pokemonverse</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="/" active={!isFavoritesActive}>
                             Home

@@ -9,6 +9,7 @@ import { fetchMyFavoritePokemons, getUser } from "../services/user";
 import UserContext from "../store/user-context";
 import Footer from "./Footer";
 import { ToastContextProvider } from "../store/toast-context";
+import PokemonDetail from "../containers/PokemonDetail";
 
 const App = () => {
     const { addUser, upsertFavoritePokemons } = useContext(UserContext);
@@ -36,6 +37,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="favorites" element={<MyFavorites />} />
+                    <Route path="/detail" element={<PokemonDetail />} />
                     <Route path="signin" element={<Login />} />
                     <Route path="signup" element={<Signup />} />
                 </Routes>
