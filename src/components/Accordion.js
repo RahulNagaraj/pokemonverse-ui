@@ -49,8 +49,7 @@ const MovesInfo = ({ movesInfo }) => {
                     className="d-flex justify-content-between align-items-start"
                 >
                     <div className="ms-2 me-auto">
-                        <div className="fw-bold">{info.name}</div>
-                        {info.move}
+                        <div className="fw-bold">{info}</div>
                     </div>
                 </ListGroup.Item>
             ))}
@@ -104,7 +103,6 @@ const StatsInfo = ({ statsInfo }) => {
 
 const PokemonAccordion = (props) => {
     const {
-        pokemonDetails,
         pokemonDetails: {
             basicInfo,
             statsInfo,
@@ -113,8 +111,6 @@ const PokemonAccordion = (props) => {
             encountersInfo,
         },
     } = props;
-
-    console.log(pokemonDetails);
 
     const renderBody = (key) => {
         switch (key) {
@@ -141,7 +137,7 @@ const PokemonAccordion = (props) => {
                         <Accordion.Header>{titles.title}</Accordion.Header>
                         <Accordion.Body
                             style={{
-                                maxHeight: "70vh",
+                                maxHeight: "50vh",
                                 overflowY: "scroll",
                                 scrollBehavior: "smooth",
                             }}

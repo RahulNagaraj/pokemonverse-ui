@@ -32,8 +32,8 @@ const PokemonDetail = () => {
             const abilities = pokemonAbilities(selectedPokemon);
             const abilitiesInfo = await getPokemonAbilities(abilities);
 
-            const moves = pokemonMoves(selectedPokemon);
-            const movesInfo = await getPokemonMoves(moves);
+            const movesInfo = pokemonMoves(selectedPokemon);
+            // const movesInfo = await getPokemonMoves(moves);
 
             const encountersInfo = await getPokemonEncounters(
                 selectedPokemon.id
@@ -62,8 +62,6 @@ const PokemonDetail = () => {
         })
         .slice(0, 8)
         .filter((sprite) => sprite.img != null);
-
-    console.log(isLoading);
 
     if (isLoading) {
         return (
